@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" packagingData="true">
+
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <!--<jsonGeneratorDecorator-->
+                    <!--class="net.logstash.logback.decorate.FeatureJsonGeneratorDecorator"/>-->
+
+            <!--格式化展示json-->
+            <jsonGeneratorDecorator class="net.logstash.logback.decorate.PrettyPrintingJsonGeneratorDecorator"/>
+            <providers>
+                <pattern>
+                    <pattern>
+                        {
+                        "date": "%date{yyyy-MM-dd'T'HH:mm:ss.SSSZ}",
+                        "level": "%level",
+                        "msg": "%msg"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

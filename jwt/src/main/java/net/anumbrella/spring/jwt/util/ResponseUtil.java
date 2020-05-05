@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author DM
+ * @author anumbrella
  */
 public class ResponseUtil {
 
